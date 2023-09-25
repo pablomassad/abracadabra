@@ -1,0 +1,7 @@
+{
+  "name": "com.pp.abracadabra",
+  "integrations": {
+    "capacitor": {}
+  },
+  "type": "custom"
+}
