@@ -8,6 +8,8 @@ import Reports from 'src/pages/reports/index.vue'
 import Summary from 'src/pages/summary/index.vue'
 import Stock from 'src/pages/stock/index.vue'
 import Settings from 'src/pages/settings/index.vue'
+import Providers from 'src/pages/providers/index.vue'
+import Products from 'src/pages/products/index.vue'
 
 const routes = [
     {
@@ -21,6 +23,8 @@ const routes = [
             { path: '/reports', component: Reports },
             { path: '/summary', component: Summary },
             { path: '/stock', component: Stock },
+            { path: '/products', component: Products },
+            { path: '/providers', component: Providers },
             { path: '/settings', component: Settings }
         ]
     },
