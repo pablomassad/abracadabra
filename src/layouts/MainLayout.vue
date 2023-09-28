@@ -1,5 +1,5 @@
 <template>
-    <q-layout view="hHh Lpr lff">
+    <q-layout view="hHh Lpr lff" class="backLayout">
         <q-header elevated :class="$q.dark.isActive ? 'bg-secondary' : 'bg-orange'">
             <q-toolbar>
                 <q-btn flat dense round icon="menu" @click="toggleLeftDrawer" />
@@ -15,7 +15,7 @@
             </q-toolbar>
         </q-header>
 
-        <q-drawer v-model="drawerLeft"  :width="250" :class="$q.dark.isActive ? 'bg-grey-9' : 'bg-grey-3'" :breakpoint="500" :overlay="true" behavior="desktop" style="color: #666;box-shadow: black 3px 3px 50px !important;">
+        <q-drawer v-model="drawerLeft" :width="250" :class="$q.dark.isActive ? 'bg-grey-9' : 'bg-grey-3'" :breakpoint="500" :overlay="true" behavior="desktop" style="color: #666;box-shadow: black 3px 3px 50px !important;">
             <q-list style="padding-top:20px">
                 <EssentialLink v-for="link in linksList" :key="link.title" v-bind="link" />
             </q-list>
@@ -30,6 +30,7 @@
         </q-page-container>
     </q-layout>
 </template>
+
 <script setup>
 import { ref, onMounted } from 'vue'
 import { ui } from 'fwk-q-ui'
@@ -109,6 +110,9 @@ const toggleLeftDrawer = () => {
 </script>
 
 <style scoped>
+.backLayout {
+    background: lightgray;
+}
 
 .title {
     color: rgb(255, 255, 255);

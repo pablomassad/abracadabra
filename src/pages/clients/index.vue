@@ -7,7 +7,7 @@
         </q-input>
         <div class="listFrame">
             <div v-for="cli in store.state.clients" :key="cli">
-                <div class="grdClient" v-if="evalFilter(cli)">
+                <div class="grdClient" v-if="evalFilter(cli)" :class="{'negativeTag': (cli.balance < 0), 'positiveTag': (cli.balance >= 0)}">
                     <div class="grdItem">
                         <q-icon name="shopping_cart" class="clientIcon"></q-icon>
                         <div class="clientValue">$ {{ cli.balance }}</div>
@@ -35,11 +35,6 @@
                 </div>
             </div>
         </div>
-
-        <!--<ion-item class="clientCard" [style.background]="(cli.balance >= 0) ?
-        'linear-gradient(to bottom, #ded 0%, #ded 88%, #cdc 100%)':
-        'linear-gradient(to bottom, #edd 0%, #edd 88%, #dcc 100%)'">-->
-
     </div>
 </template>
 

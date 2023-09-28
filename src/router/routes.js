@@ -4,7 +4,6 @@ import Login from 'src/pages/login/index.vue'
 import Clients from 'src/pages/clients/index.vue'
 import Sales from 'src/pages/sales/index.vue'
 import Accounts from 'src/pages/accounts/index.vue'
-import Movements from 'src/pages/accounts/movements/index.vue'
 import Reports from 'src/pages/reports/index.vue'
 import Summary from 'src/pages/summary/index.vue'
 import Stock from 'src/pages/stock/index.vue'
@@ -21,7 +20,6 @@ const routes = [
             { path: '/clients', component: Clients },
             { path: '/sales', component: Sales },
             { path: '/accounts', component: Accounts },
-            { path: '/movements', component: Movements },
             { path: '/reports', component: Reports },
             { path: '/summary', component: Summary },
             { path: '/stock', component: Stock },

@@ -2,3 +2,22 @@
     max-width: 500px;
     margin: auto;
 }
+
+body {
+    --sky: #83d8de;
+    --negative: #eb9797;
+    --positive: #96cf96;
+    --backPanel: #e6e6e6;
+}
+
+.negativeTag {
+    border-width: 5px;
+    border-style: solid;
+    border-image: linear-gradient(to right, transparent 0%, var(--negative)) 1;
+}
+
+.positiveTag {
+    border-width: 5px;
+    border-style: solid;
+    border-image: linear-gradient(to right, transparent 0%, var(--positive)) 1;
+}
