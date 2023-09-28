@@ -34,6 +34,30 @@ const actions = {
         const res = await fb.getCollectionFlex('clients', ops)
         actions.setAccounts(res)
         ui.actions.hideLoading()
+        return res
+    },
+    async getMovementsByClient (clientId) {
+        console.log('store getMovementsByClient:', clientId)
+        ui.actions.showLoading()
+        const ops = {
+            field: 'idClient',
+            op: '==',
+            val: clientId,
+            sortField: 'datetime',
+            sortDir: 'asc'
+        }
+        const res = await fb.getCollectionFlex('movements', ops)
+        console.log('store getMovementsByClient:', res)
+        ui.actions.hideLoading()
+        return res
+    },
+    async getDetailsByMov (movId) {
+        console.log('store getDetailsByMov:', movId)
+        ui.actions.showLoading()
+        const res = await fb.getCollection(`movements/${movId}/details`)
+        console.log('store getDetailsByMov:', res)
+        ui.actions.hideLoading()
+        return res
     }
 }
 

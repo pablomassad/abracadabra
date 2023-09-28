@@ -1,5 +1,5 @@
 <template>
-    <div class="backIntegralmente">
+    <div class="back">
         <q-input v-model="criteria" label="Buscar clientes" class="filterText" clearable color="black" bg-color="lightgray" filled>
             <template v-slot:prepend>
                 <q-icon name="search" />

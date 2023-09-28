@@ -1,5 +1,5 @@
 <template>
-    <div class="backIntegralmente">
+    <div class="back">
         <div class="client"> {{ pin.cli.fullName }}</div>
         <div v-if="pin.type === 'RC'">Total: {{ pin.cli.sales }}</div>
         <div v-if="pin.type === 'CC'">Total: {{ pin.cli.balance }}</div>
@@ -27,9 +27,9 @@
 import { ui } from 'fwk-q-ui'
 import { ref, onMounted } from 'vue'
 import store from './store'
-import { userRouter } from 'vue-router'
+import { useRouter } from 'vue-router'
 
-const router = userRouter()
+const router = useRouter()
 
 onMounted(async () => {
     ui.actions.setTitle('Detalle de movimientos')

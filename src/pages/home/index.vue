@@ -1,5 +1,5 @@
 <template>
-    <div class="backIntegralmente">
+    <div class="back">
 
     </div>
 </template>

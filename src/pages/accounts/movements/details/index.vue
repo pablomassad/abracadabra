@@ -1,5 +1,5 @@
 <template>
-    <div class="backIntegralmente">
+    <div class="back">
         <div class="client"> {{ pin.cli.fullName }}</div>
         <div v-if="pin.type === 'RC'">Total: {{ pin.cli.sales }}</div>
         <div v-if="pin.type === 'CC'">Total: {{ pin.cli.balance }}</div>

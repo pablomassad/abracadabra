@@ -1,5 +1,5 @@
 <template>
-    <div class="backIntegralmente">
+    <div class="back">
         <div class="total">Total: ${{ totals.totDay }}</div>
         <div class="grdSubTotales">
             <div class="label">Efvo</div>

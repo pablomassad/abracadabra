@@ -1,12 +1,12 @@
 <template>
-    <div class="backIntegralmente" v-if="store.state.settings">
+    <div class="back" v-if="store.state.settings">
         <div class="alertsFrame">
-            <q-slider class="alert" v-model="days" :min="1" :max="MAX_DAYS" :step="2" label :label-value="days + 'd'" label-always color="primary" markers track-size="20px" thumb-size="40px" thumb-color="blue"  :marker-labels="daysLimit"/>
+            <q-slider class="alert" v-model="days" :min="1" :max="MAX_DAYS" :step="2" label :label-value="days + 'd'" label-always color="primary" markers track-size="20px" thumb-size="40px" thumb-color="blue" :marker-labels="daysLimit" />
 
-            <q-slider class="alert" v-model="money" :min="0" :max="MAX_MONEY" :step="5000" label :label-value="'$' + money" label-always color="secondary" markers track-size="20px" thumb-size="40px" thumb-color="green"  :marker-labels="moneyLimit" />
+            <q-slider class="alert" v-model="money" :min="0" :max="MAX_MONEY" :step="5000" label :label-value="'$' + money" label-always color="secondary" markers track-size="20px" thumb-size="40px" thumb-color="green" :marker-labels="moneyLimit" />
         </div>
 
-          <q-btn color="primary" icon="save" @click="save" label="Guardar cambios"  class="btnSave" />
+        <q-btn color="primary" icon="save" @click="save" label="Guardar cambios" class="btnSave" />
     </div>
 </template>
 
@@ -43,7 +43,7 @@ watch(() => store.state.settings, (newVal) => {
     margin: 100px 16px 0 16px;
 }
 
-.btnSave{
+.btnSave {
     display: flex;
     width: 300px;
     margin: auto;
