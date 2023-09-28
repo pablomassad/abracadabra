@@ -19,7 +19,7 @@ onMounted(() => {
             isMobile: false,
             appname: 'abracadabra',
             origApp: 'abracadabra',
-            tool: '/settings'
+            tool: '/accounts'
         },
         data: {}
     }

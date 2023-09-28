@@ -119,4 +119,5 @@ watch(() => store.state.salesToday, (newVal) => {
 
 .label {
     font-weight: bold;
-}</style>
+}
+</style>

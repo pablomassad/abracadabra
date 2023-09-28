@@ -1,6 +1,6 @@
 <template>
     <div class="backIntegralmente">
-        <q-input v-model="criteria" label="Buscar clientes" class="filterText" clearable  color="black" bg-color="lightgray" filled >
+        <q-input v-model="criteria" label="Buscar clientes" class="filterText" clearable color="black" bg-color="lightgray" filled>
             <template v-slot:prepend>
                 <q-icon name="search" />
             </template>
@@ -53,9 +53,6 @@ const criteria = ref()
 onMounted(async () => {
     store.actions.getClients()
 })
-const onChangeFilter = (event) => {
-    criteria.value = event
-}
 const evalFilter = (v) => {
     const flag = Object.keys(v).some(k => {
         let result = false
@@ -68,9 +65,10 @@ const evalFilter = (v) => {
 </script>
 
 <style scoped>
-.filterText{
-    margin:8px 16px 0;
+.filterText {
+    margin: 8px 16px 0;
 }
+
 .listFrame {
     overflow: auto;
     height: calc(100vh - 107px);

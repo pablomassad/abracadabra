@@ -56,7 +56,7 @@ const getCollectionFlex = async (colName, ops) => {
     let operator = '=='
     if (ops.op) operator = ops.op
     if (ops.field && ops.sortField) {
-        q = query(collection(db, colName), where(ops.field, operator, ops.val), orderBy(ops.sortField, ops.dir))
+        q = query(collection(db, colName), where(ops.field, operator, ops.val), orderBy(ops.field, 'asc'), orderBy(ops.sortField, ops.dir))
     }
     if (ops.field && !ops.sortField) {
         q = query(collection(db, colName), where(ops.field, operator, ops.val))

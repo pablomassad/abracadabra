@@ -6,17 +6,17 @@
                 <q-toolbar-title>{{ ui.state.title }}</q-toolbar-title>
                 <div>
                     <span>
-                        Version: 1
+                        Version: 1.0.0
                     </span>
-                    <q-avatar style="cursor: pointer;" color="teal" class="q-ml-sm" @click="(dialog = !dialog)">
+                    <q-avatar style="cursor: pointer;" color="red" class="q-ml-sm" @click="(dialog = !dialog)">
                         PM
                     </q-avatar>
                 </div>
             </q-toolbar>
         </q-header>
 
-        <q-drawer v-model="drawerLeft" style="color: #666" :width="250" :class="$q.dark.isActive ? 'bg-grey-9' : 'bg-grey-3'" :breakpoint="500">
-            <q-list style="padding-top:70px">
+        <q-drawer v-model="drawerLeft"  :width="250" :class="$q.dark.isActive ? 'bg-grey-9' : 'bg-grey-3'" :breakpoint="500" :overlay="true" behavior="desktop" style="color: #666;box-shadow: black 3px 3px 50px !important;">
+            <q-list style="padding-top:20px">
                 <EssentialLink v-for="link in linksList" :key="link.title" v-bind="link" />
             </q-list>
         </q-drawer>
@@ -47,13 +47,13 @@ const linksList = ref([
     {
         title: 'Ventas diarias',
         caption: 'Resumen diario de ventas',
-        icon: 'move_to_inbox',
+        icon: 'point_of_sale',
         link: '/sales'
     },
     {
         title: 'Cuentas Corrientes',
         caption: 'Estado de cuentas',
-        icon: 'manage_accounts',
+        icon: 'currency_exchange',
         link: '/accounts'
     },
     {
@@ -65,31 +65,31 @@ const linksList = ref([
     {
         title: 'Reportes',
         caption: 'Graficos estadísticos',
-        icon: 'bar_chart',
+        icon: 'area_chart',
         link: '/reports'
     },
     {
         title: 'Stock',
         caption: 'Administracion de stock',
-        icon: 'bar_chart',
+        icon: 'vertical_split',
         link: '/stock'
     },
     {
         title: 'Mercaderia',
         caption: 'Administracion de códigos',
-        icon: 'assignment',
+        icon: 'sell',
         link: '/products'
     },
     {
         title: 'Proveedores',
         caption: 'Gestion de proveedores',
-        icon: 'align_horizontal_left',
+        icon: 'real_estate_agent',
         link: '/providers'
     },
     {
         title: 'Opciones',
         caption: 'Configuracion de alertas',
-        icon: 'alert',
+        icon: 'settings',
         link: '/settings'
     },
     {
@@ -109,18 +109,6 @@ const toggleLeftDrawer = () => {
 </script>
 
 <style scoped>
-.contentx {
-    height: calc(100vh - 50px);
-    position: relative;
-    overflow: auto;
-    /*border:4px solid black;
-  background:lightgoldenrodyellow;*/
-}
-
-.cardFrame {
-    text-align: center;
-    background: lightblue;
-}
 
 .title {
     color: rgb(255, 255, 255);
