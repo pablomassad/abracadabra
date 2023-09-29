@@ -109,6 +109,7 @@ watch(() => store.state.salesToday, (newVal) => {
 .listFrame {
     height: calc(100vh - 180px);
     overflow: auto;
+    background: var(--backPanel);
 }
 
 .saleRow {

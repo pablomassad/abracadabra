@@ -1,6 +1,6 @@
 <template>
     <div class="back">
-        <q-input v-model="criteria" label="Buscar clientes" class="filterText" clearable color="black" bg-color="lightgray" filled>
+        <q-input v-model="criteria" label="Buscar clientes" class="filterText" clearable color="black" bg-color="white" filled>
             <template v-slot:prepend>
                 <q-icon name="search" />
             </template>
@@ -213,6 +213,7 @@ const toggleDetails = async (mov) => {
     padding-top: 10px;
     height: calc(100vh - 180px);
     overflow: auto;
+    background: var(--backPanel);
 }
 
 /*==================*/

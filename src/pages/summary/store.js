@@ -21,6 +21,20 @@ const actions = {
         actions.setClients(res)
         ui.actions.hideLoading()
         return res
+    },
+    async getSumDetailsByClient (clientId) {
+        console.log('store getSumDetailsByClient:', clientId)
+        ui.actions.showLoading()
+        const ops = {
+            field: '',
+            op: '==',
+            val: clientId,
+            sortField: 'datetime',
+            sortDir: 'desc'
+        }
+        const res = await fb.getCollectionFlex('movements', ops)
+        ui.actions.hideLoading()
+        return res
     }
 }
 

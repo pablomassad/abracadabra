@@ -1,6 +1,6 @@
 <template>
     <div>
-        <q-input v-model="criteria" :label="texto" class="filterText" clearable dense color="black" bg-color="lightgray" filled  @change="onChange">
+        <q-input v-model="criteria" :label="texto" class="filterText" clearable dense color="black" bg-color="white" filled @change="onChange">
             <template v-slot:prepend>
                 <q-icon name="search" />
             </template>
@@ -27,7 +27,7 @@ const onChange = (evt) => {
 </script>
 
 <style scoped>
-.filterText{
-    margin:8px;
+.filterText {
+    margin: 8px;
 }
 </style>

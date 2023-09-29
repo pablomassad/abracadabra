@@ -16,6 +16,14 @@ const actions = {
         const res = await fb.getCollection('clients')
         actions.setClients(res)
         ui.actions.hideLoading()
+    },
+    async hideClient (cli) {
+        console.log('store hideClient')
+        ui.actions.showLoading()
+        const tmp = { ...cli }
+        tmp.hidden = true
+        const res = await fb.setDocument('clients', tmp, cli.id)
+        ui.actions.hideLoading()
     }
 }
 
