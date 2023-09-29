@@ -59,7 +59,7 @@ const local = ref({
 const initBindingForm = () => {
     refFirstName.value.setData({
         label: 'Ingrese  Nombre',
-        value: local.value.data?.firstname,
+        value: local.value.data?.firstName,
         required: false
     }, '*')
     refLastName.value.setData({
@@ -114,16 +114,17 @@ const confirmSave = () => {
     showConfirm.value = true
     dialogMessage.value = 'Confirma la grabacion de cambios?'
     onAcceptDialog.value = async () => {
-        const firstName = refFirstName.value.props.data.value.firstName
-        const lastName = refLastName.value.props.data.value.lastName
+        const firstName = refFirstName.value.props.data.value
+        const lastName = refLastName.value.props.data.value
         const payload = {
+            id: local.value.data.id,
             firstName,
             lastName,
             fullName: `${lastName}, ${firstName}`,
-            address: refAddress.value.props.data.value.address,
-            email: refMail.value.props.data.value.mail,
-            telephone: refAddress.value.props.data.value.telephone,
-            birthday: refAddress.value.props.data.value.birthday
+            address: refAddress.value.props.data.value,
+            email: refMail.value.props.data.value,
+            telephone: refTelephone.value.props.data.value,
+            birthday: refBirthday.value.props.data.value
         }
         await saveData(payload)
     }

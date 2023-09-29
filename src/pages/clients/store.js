@@ -24,6 +24,12 @@ const actions = {
         tmp.hidden = true
         const res = await fb.setDocument('clients', tmp, cli.id)
         ui.actions.hideLoading()
+    },
+    async save (cli) {
+        console.log('store save')
+        ui.actions.showLoading()
+        const res = await fb.setDocument('clients', cli, cli.id)
+        ui.actions.hideLoading()
     }
 }
 
