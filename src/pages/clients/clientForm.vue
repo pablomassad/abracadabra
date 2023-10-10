@@ -108,6 +108,7 @@ const resetForm = () => {
     local.value.showForm = false
     local.value.data = undefined
     ui.actions.setPreventBack(false)
+    store.actions.getClients()
 }
 
 const confirmSave = () => {
@@ -126,19 +127,15 @@ const confirmSave = () => {
             telephone: refTelephone.value.props.data.value,
             birthday: refBirthday.value.props.data.value
         }
-        await saveData(payload)
+        const result = await store.actions.save(payload)
+        showConfirm.value = false
+        if (!result) return
+        resetForm()
     }
     onCancelDialog.value = () => {
         console.log('cancel  dialog')
         showConfirm.value = false
     }
-}
-
-const saveData = async (payload, plNovelty) => {
-    const result = await store.actions.save(payload)
-    showConfirm.value = false
-    if (!result) return
-    resetForm()
 }
 
 const evalDirtysInputs = () => {

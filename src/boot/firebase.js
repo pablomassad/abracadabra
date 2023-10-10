@@ -87,8 +87,19 @@ const addDocument = async (col, d) => {
     return docRef
 }
 const setDocument = async (col, d, id) => {
-    const docRef = doc(db, col, d.id || id)
-    await setDoc(docRef, d, { merge: true })
+    let docRef
+    if (id) {
+        const docRef = doc(db, col, id)
+        await setDoc(docRef, d, { merge: true }).then(() => {
+            console.log('Document has been added successfully')
+        }).catch(error => {
+            console.log(error)
+        })
+    } else {
+        const ref = collection(db, col)
+        removeUndefinedFields(d)
+        await addDoc(ref, d)
+    }
     return true
 }
 const deleteDocument = async (col, id) => {
@@ -140,3 +151,12 @@ const fb = {
 }
 
 export default fb
+
+function removeUndefinedFields (data) {
+    for (const key in data) {
+        if (data[key] === undefined) {
+            delete data[key]
+        }
+    }
+    return data
+}

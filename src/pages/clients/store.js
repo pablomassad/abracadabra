@@ -30,6 +30,7 @@ const actions = {
         ui.actions.showLoading()
         const res = await fb.setDocument('clients', cli, cli.id)
         ui.actions.hideLoading()
+        return res
     }
 }
 
